@@ -3,14 +3,14 @@ import { useLocation, useNavigate } from "react-router";
 import { usePuterStore } from "~/lib/puter";
 
 export const meta = () => [
-  { title: "ResumeAI | Auth" },
-  { name: "description", content: "Authenticate to ResumeAi" },
+  { title: "ResumeME | Auth" },
+  { name: "description", content: "Authenticate to ResumeME" },
 ];
 
 const Auth = () => {
   const { isLoading, auth } = usePuterStore();
   const location  = useLocation();
-  const next = location.search.split('next=')[1] ;
+  const next = location.search.split('next=')[1] || '/';
   const navigate = useNavigate();
 
  useEffect(() => {
